@@ -2,14 +2,13 @@ services:
   - type: web
     name: smartedubot
     env: python
-    region: frankfurt  # կամ ցանկալի Render տարածաշրջանը
     buildCommand: pip install -r requirements.txt
     startCommand: python smartedubot.py
     plan: free
     envVars:
       - key: TELEGRAM_TOKEN
-        sync: false    # 🔒 արժեքը կավելացնես Render UI-ում, ոչ GitHub-ում
+        sync: false
       - key: OPENAI_API_KEY
-        sync: false    # 🔒 արժեքը նույնպես Render UI-ում
+        sync: false
       - key: WEBHOOK_URL
-        sync: false    # եթե webhook ես օգտագործում՝ այստեղ լրացրու Render-ի դոմեյնը
+        sync: false
